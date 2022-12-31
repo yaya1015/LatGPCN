@@ -18,7 +18,6 @@ class LatGPCN(nn.Module):
 
     def forward(self, x, edge, A_value):
         x = F.dropout(x, self.dropout, training=self.training)
-        print("begain 1-------------------------------------")
         x = F.relu(self.gc1(x, edge, A_value))
         x = F.dropout(x, self.dropout, training=self.training)
         x = self.gc2(x, edge, A_value)

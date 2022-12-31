@@ -76,6 +76,7 @@ f.close()
 opt['dataset'] = "wiki"
 opt['lamda1']= 0.1
 opt['gamma'] = 8
+opt['weight_decay']= 5e-5
 for pr in ptb_rate:
     opt['ptb_rate'] = pr
     run(opt)
@@ -90,6 +91,7 @@ f.write('cora_ml:')
 f.close()
 opt['dataset'] = "cora_ml"
 opt['lamda1']= 1
+opt['weight_decay']= 5e-5
 for pr in ptb_rate:
     opt['ptb_rate'] = pr
     run(opt)
