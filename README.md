@@ -27,6 +27,9 @@ Run LatGPCN model on all five datasets under Random attack using:
 
 The finall results are recorded in "result.txt".
 
+## Training process
+We provide the output records of training process of cora and citeseer datasets on 0.25% mettack on file "cora_meta_2.5.txt" and "citeseer_meta_2.5.txt" respectively.
+
 ## References
 
 [1] [Jin & Ma, Graph Structure Learning for Robust Graph Neural Networks, 2020](https://dl.acm.org/doi/10.1145/3394486.3403049)
