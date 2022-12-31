@@ -55,6 +55,10 @@ adj, features, labels = data.adj, data.features, data.labels
 idx_train, idx_val, idx_test = data.idx_train, data.idx_val, data.idx_test
 
 def test(perturbed_adj):
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
+    if args.cuda:
+        torch.cuda.manual_seed(args.seed)
     numv = np.zeros(args.iter_all)
     norm_H = True if args.dataset=="wiki" else False
 

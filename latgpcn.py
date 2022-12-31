@@ -72,13 +72,13 @@ class LatGPCNTrain:
             acc_val = accuracy(output[idx_val], labels[idx_val]).item()
 
             #print
-            # if self.args.debug:
-            #     print('Epoch: {:04d}'.format(epoch+1),
-            #           'loss_train: {:.4f}'.format(loss_train.item()),
-            #           'acc_train: {:.4f}'.format(acc_train.item()),
-            #           'loss_val: {:.4f}'.format(loss_val),
-            #           'acc_val: {:.4f}'.format(acc_val),
-            #           'time: {:.4f}s'.format(time.time() - t))
+            if self.args.debug:
+                print('Epoch: {:04d}'.format(epoch+1),
+                      'loss_train: {:.4f}'.format(loss_train.item()),
+                      'acc_train: {:.4f}'.format(acc_train.item()),
+                      'loss_val: {:.4f}'.format(loss_val),
+                      'acc_val: {:.4f}'.format(acc_val),
+                      'time: {:.4f}s'.format(time.time() - t))
 
             # Determine whether to stop early
             Flag_stop = self.earlystop.judge_stop(output, loss_val, acc_val, epoch)

@@ -32,7 +32,8 @@ f.read()
 f.write('cora:')
 f.close()
 opt['dataset'] = "cora"
-opt['lamda1']= 2
+opt['weight_decay']= 5e-4
+opt['lamda1']=3#2
 for pr in ptb_rate:
     opt['ptb_rate'] = pr
     run(opt)
@@ -47,6 +48,7 @@ f.write('citeseer:')
 f.close()
 opt['dataset'] = "citeseer"
 opt['lamda1'] = 10
+opt['weight_decay']= 5e-4
 for pr in ptb_rate:
     opt['ptb_rate'] = pr
     run(opt)
@@ -61,6 +63,22 @@ f.write('pubmed:')
 f.close()
 opt['dataset'] = "pubmed"
 opt['lamda1']= 10
+opt['weight_decay']= 5e-4
+for pr in ptb_rate:
+    opt['ptb_rate'] = pr
+    run(opt)
+f = open('result.txt','r+')
+f.read()
+f.write("\n")
+f.close()
+
+f = open('result.txt','r+')
+f.read()
+f.write('cora_ml:')
+f.close()
+opt['dataset'] = "cora_ml"
+opt['lamda1']= 1
+opt['weight_decay']= 5e-5
 for pr in ptb_rate:
     opt['ptb_rate'] = pr
     run(opt)
@@ -76,21 +94,6 @@ f.close()
 opt['dataset'] = "wiki"
 opt['lamda1']= 0.1
 opt['gamma'] = 8
-opt['weight_decay']= 5e-5
-for pr in ptb_rate:
-    opt['ptb_rate'] = pr
-    run(opt)
-f = open('result.txt','r+')
-f.read()
-f.write("\n")
-f.close()
-
-f = open('result.txt','r+')
-f.read()
-f.write('cora_ml:')
-f.close()
-opt['dataset'] = "cora_ml"
-opt['lamda1']= 1
 opt['weight_decay']= 5e-5
 for pr in ptb_rate:
     opt['ptb_rate'] = pr

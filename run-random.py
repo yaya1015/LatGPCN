@@ -49,6 +49,8 @@ f.write('citeseer:')
 f.close()
 opt['dataset'] = "citeseer"
 opt['lamda1'] = 10.
+opt['weight_decay']=1e-3
+opt['gamma'] = 1.5
 for pr in ptb_rate:
     opt['ptb_rate'] = pr
     run(opt)
@@ -64,6 +66,7 @@ f.close()
 opt['dataset'] = "pubmed"
 opt['weight_decay']=1e-4
 opt['lamda1'] = 10.
+opt['gamma'] = 1.5
 for pr in ptb_rate:
     opt['ptb_rate'] = pr
     run(opt)
